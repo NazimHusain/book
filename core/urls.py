@@ -22,10 +22,20 @@ from django.urls import re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # re_path(
+    #     r"^api/(?P<version>(v1))/helpers/",
+    #     include("apps.helpers.urls"),
+    #     name="helpers-apis",
+    # ),
+    # re_path(
+    #     r"^api/(?P<version>(v1))/user/",
+    #     include("apps.customuser.urls"),
+    #     name="user-apis",
+    # ),
     re_path(
-        r"^api/(?P<version>(v1))/helpers/",
-        include("apps.helpers.urls"),
-        name="helpers-apis",
+        r"^api/(?P<version>(v1))/books/",
+        include("apps.bookapp.urls"),
+        name="books-apis",
     ),
  
 ]

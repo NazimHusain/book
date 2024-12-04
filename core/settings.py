@@ -47,7 +47,9 @@ INSTALLED_APPS = [
 ]
 
 LOCAL_APPS = [
-    "apps.helpers",
+    # "apps.helpers",
+    # "apps.customuser",
+    "apps.bookapp",
 ]
 
 THIRD_PARTY_APPS = [
@@ -168,7 +170,7 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
-    "PAGE_SIZE": 10,
+    "PAGE_SIZE": 25,
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.NamespaceVersioning",
     "EXCEPTION_HANDLER": "rest_framework.views.exception_handler",
