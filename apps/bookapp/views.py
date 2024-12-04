@@ -33,6 +33,12 @@ class BooksListView(APIView):
     
         if 'mime_type' in query_params:
             filters &= Q(booksformat__mime_type__icontains=query_params['mime_type'])
+            
+        if 'author' in query_params:
+            filters &= Q(booksbookauthors__author__name__icontains=query_params['author'])
+
+        if 'title' in query_params:
+            filters &= Q(title__icontains=query_params['title'])
 
         books = BookModels.BooksBook.objects.filter(filters).distinct().order_by('-download_count')
 
